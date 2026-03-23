@@ -72,6 +72,4 @@ npm run dev
 ---
 
 ## 📄 License
-
-## 📄 License
 Project under MIT License. Implemented with excellence by **Sachin**.
