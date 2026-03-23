@@ -1,56 +1,77 @@
-# 🔥 AI Stock & Crypto Insight Dashboard
+# 🚀 AI Stock & Crypto Insight Dashboard
 
-A premium, production-ready SaaS-style dashboard for tracking financial assets with AI-powered sentiment analysis and system monitoring.
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![MySQL](https://img.shields.io/badge/MySQL-00000f?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-![Aesthetic Dashboard](https://images.unsplash.com/photo-1611974714658-dc3d40909562?auto=format&fit=crop&q=80&w=1200)
+**A premium, enterprise-ready SaaS-style financial dashboard** offering real-time stock and crypto tracking, powered by AI sentiment analysis and industrial-grade monitoring.
 
-## 🎯 Features
+---
 
-- **Real-time Market Data**: Track Bitcoin, Ethereum, Apple, and more via CoinGecko and Yahoo Finance.
-- **AI Insight Engine**: Get Bullish/Bearish trends and risk assessments powered by Mistral 7B (HuggingFace).
-- **Premium Dark UI**: Glassmorphic design with smooth animations and responsive charts.
-- **User Authentication**: Secure JWT-based login and signup.
-- **Asset Watchlist**: Save and monitor your favorite stocks and cryptos.
-- **Enterprise Monitoring**: Spring Boot Actuator + Prometheus endpoint for system health.
+## 🌟 Core Features
 
-## 🧱 Tech Stack
+- **📊 Intelligent Market Tracking**: Real-time integration with **CoinGecko** and **Yahoo Finance** for seamless asset monitoring.
+- **🤖 AI Sentiment Engine**: Powered by **Mistral-7B via HuggingFace**, providing automated "Bullish/Bearish" trends and risk assessments based on live metadata.
+- **💎 Glassmorphic UI**: High-fidelity dark theme with glass-morphism, fluid animations (Framer Motion), and responsive Recharts for data visualization.
+- **🔐 Robust Security**: Spring Security combined with **stateless JWT authentication** and secure password hashing via BCrypt.
+- **📈 Watchlist Management**: User-specific watchlists persisted in a relational RDBMS.
+- **🛡️ Enterprise Monitoring**: Exposed **Spring Boot Actuator** and **Prometheus** endpoints for real-time system health and performance metrics.
 
-- **Frontend**: React (Vite), Tailwind CSS, Recharts, Lucide Icons, Framer Motion.
-- **Backend**: Spring Boot (Java 17), Maven, MongoDB.
-- **Security**: Spring Security + JWT.
-- **AI**: HuggingFace Inference API (Mistral-7B).
-- **Monitoring**: micrometer-registry-prometheus.
+---
 
-## 🚀 Getting Started
+## 🏗️ System Architecture
 
-### 1. Prerequisites
-- Java 17+
-- Node.js 18+
-- MongoDB (running locally or on Atlas)
-- HuggingFace API Key (Free)
+The project follows a decoupled, cloud-native architecture:
 
-### 2. Backend Setup
+- **Frontend**: A high-performance React SPA built with Vite for sub-second hot-reloads and optimized production bundles.
+- **Backend**: A modular Spring Boot REST API strictly following MVC patterns, designed for high throughput and scalability.
+- **Database**: Relational MySQL storage with **JPA/Hibernate** for transaction integrity and efficient querying.
+- **AI Layer**: Server-less inference calls to HuggingFace, ensuring no heavy on-premise LLM overhead.
+
+---
+
+## 🚀 Deployment & Scaling
+
+- **Frontend**: Optimally deployed to **Vercel** with automatic CIDR and global edge caching.
+- **Backend**: Containerized via **Dockerfile** and ready for deployment on **Railway** or **Render**.
+- **Observability**: Ready for **Grafana** dashboards using the pre-configured Prometheus registry.
+
+---
+
+## ⚙️ Quick Start
+
+### 1. Project Configuration
+Ensure you have your **HuggingFace API Key** and your **MySQL Connection String** (Public Proxy) ready in the root `.env` file.
+
+### 2. Backend Launch
 ```bash
 cd backend
-# Update src/main/resources/application.properties with your keys
 mvn clean install
 mvn spring-boot:run
 ```
 
-### 3. Frontend Setup
+### 3. Frontend Launch
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-### 4. Monitoring
-- Metrics available at: `http://localhost:8080/actuator/prometheus`
+---
 
-## 🌐 Deployment
+## 📂 Repository Structure
 
-- **Frontend**: Deploy `frontend/` to **Vercel** or **Netlify**.
-- **Backend**: Deploy `backend/` to **Render** or **Railway** (requires MongoDB).
+- `/backend`: Core Spring Boot API, Security, and JPA Logic.
+- `/frontend`: Modern React application with Tailwind CSS.
+- `/screenshots`: Visual documentation of the platform.
+- `Dockerfile`: Production-ready containerization for the microservice.
+
+---
 
 ## 📄 License
-MIT License. Created by Sachin.
+
+## 📄 License
+Project under MIT License. Implemented with excellence by **Sachin**.

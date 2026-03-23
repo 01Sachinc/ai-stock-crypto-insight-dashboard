@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Sidebar from './Sidebar';
 import { useAuth } from '../context/AuthContext';
 import { Navigate, Outlet } from 'react-router-dom';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: { children?: ReactNode }) => {
   const { user, loading } = useAuth();
 
   if (loading) return (
@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
       <main className="flex-1 ml-64 overflow-y-auto p-8 relative">
         <div className="max-w-7xl mx-auto z-10 relative">
           <Outlet />
+          {children}
         </div>
         
         {/* Background Gradients */}

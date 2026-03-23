@@ -132,7 +132,7 @@ const Dashboard = () => {
   );
 };
 
-const StatCard = ({ icon: Icon, label, value, color }) => (
+const StatCard = ({ icon: Icon, label, value, color }: { icon: any, label: string, value: string, color: string }) => (
   <div className="glass p-6 rounded-2xl flex items-center gap-4">
     <div className={`p-3 rounded-xl bg-white/5 ${color}`}>
       <Icon className="w-6 h-6" />

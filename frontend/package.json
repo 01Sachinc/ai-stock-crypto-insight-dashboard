@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.2.2",
     "axios": "^1.13.6",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
@@ -32,6 +34,7 @@
     "globals": "^17.4.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3",
     "vite": "^8.0.1"
   }
 }

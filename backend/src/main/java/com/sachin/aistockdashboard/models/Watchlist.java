@@ -3,18 +3,25 @@ package com.sachin.aistockdashboard.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.persistence.*;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "watchlists")
+@Entity
+@Table(name = "watchlists")
 public class Watchlist {
     @Id
-    private String id;
-    private String userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(unique = true, nullable = false)
+    private String userId; // Usually matches User.username in this app
+    
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "watchlist_assets", joinColumns = @JoinColumn(name = "watchlist_id"))
+    @Column(name = "symbol")
     private List<String> assetSymbols;
 }
