@@ -15,37 +15,42 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-sidebar border-r border-border flex flex-col z-50">
-      <div className="p-6">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent flex items-center gap-2">
-          <TrendingUp className="text-primary" /> AI Insights
+    <aside className="fixed left-0 top-0 h-full w-72 glass border-r border-white/5 flex flex-col z-50">
+      <div className="p-8 flex items-center justify-center border-b border-white/5">
+        <h1 className="text-2xl font-bold text-gradient flex items-center gap-3">
+          <div className="p-2 bg-blue-500/10 rounded-xl">
+            <TrendingUp className="text-blue-400 w-6 h-6" />
+          </div>
+          AI Insights
         </h1>
       </div>
 
-      <nav className="flex-1 mt-6 px-4 space-y-2">
+      <nav className="flex-1 mt-8 px-5 space-y-2">
         {links.map((link) => (
           <NavLink
             key={link.to}
             to={link.to}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
-                isActive ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'text-muted hover:bg-white/5 hover:text-white'
+              `flex items-center gap-4 px-5 py-4 rounded-2xl transition-all duration-300 font-medium ${
+                isActive 
+                  ? 'bg-gradient-to-r from-blue-500/20 to-indigo-500/10 text-white border border-blue-500/20 glow-blue' 
+                  : 'text-muted-foreground hover:bg-white/5 hover:text-white border border-transparent'
               }`
             }
           >
-            <link.icon className="w-5 h-5" />
-            <span className="font-medium">{link.name}</span>
+            <link.icon className={`w-5 h-5 ${location.pathname === link.to ? 'text-blue-400' : ''}`} />
+            <span>{link.name}</span>
           </NavLink>
         ))}
       </nav>
 
-      <div className="p-6 border-t border-border">
+      <div className="p-6 border-t border-white/5 mt-auto">
         <button
           onClick={logout}
-          className="flex items-center gap-3 px-4 py-3 w-full text-muted hover:text-red-400 hover:bg-red-400/10 rounded-xl transition-colors"
+          className="flex items-center gap-4 px-5 py-4 w-full text-muted-foreground hover:text-red-400 hover:bg-red-500/10 rounded-2xl transition-all duration-300 font-medium group"
         >
-          <LogOut className="w-5 h-5" />
-          <span className="font-medium">Logout</span>
+          <LogOut className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          <span>Logout</span>
         </button>
       </div>
     </aside>
